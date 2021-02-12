@@ -45,19 +45,19 @@ let i = allGoods.map(allGoodsItem => {
 console.log( i);
 
 const renderGoods = (img, title, price) =>{
-    return '<div class="goods" id = "goods"><div class="goods-img"> <img src="${img}"></div>' +
-            '<div class="goods-info justify-content-between"><div class="goods-title">${title}</div>' +
-            '<div class="goods-price"><span>${price}</span><span>₽</span></div>' +
-            '</div><a class="button">Добавить</a></div> '
+    return `<div class="goods" id = "goods"><div class="goods-img"> <img src="${img}"></div>` +
+            `<div class="goods-info justify-content-between"><div class="goods-title">${title}</div>` +
+            `<div class="goods-price"><span>${price}</span><span>₽</span></div>` +
+            `</div><a class="button">Добавить</a></div>`
 }
 
-console.log(renderGoods(allGoods.img, allGoods.title,allGoods.price));
+// console.log(renderGoods(allGoods.img, allGoods.title,allGoods.price));
 
-const renderGoodsList = (list) => {
-    let goodsList = list.map(item => renderGoods(item.img, item.title, item.price));
+const renderGoodsList = (list) => { //map преобразует и возвращает массив, при выводе он по умолчание
+    // делае join через запятую, что бы убрать запятые нужно добавить пустой join("")
+    let goodsList = list.map(item => renderGoods(item.img, item.title, item.price)).join("");
     console.log(goodsList);
-    // document.querySelector("#goods-list").insertAdjacentHTML("beforeend", goodsList);
-    document.querySelector("#goods-list").innerHTML = goodsList;
+    document.querySelector("#goods-list").insertAdjacentHTML("beforeend", goodsList);
 }
 
 renderGoodsList(allGoods);
