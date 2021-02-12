@@ -1,0 +1,86 @@
+
+* {margin: 0; padding: 0;}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #1f1f1f;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+menu  li {
+  list-style-type: none;
+  margin: 5px 5px 0 0;
+
+}
+
+.container h1 {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 48px;
+  margin-bottom: 35px;
+}
+.button {
+  border: 2px solid black;
+  cursor: pointer;
+  padding: 10px 30px;
+  position: relative;
+ }
+.button:hover {
+  color:white;
+  background-color: black;
+}
+.cart-counter {
+  position: absolute;
+  top: 4px;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.goods {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: calc(28% - 16px);
+  height: 506px;
+  margin: 0 8px;
+  padding: 24px;
+  align-items: center;
+  font-size: 18px;
+}
+.goods:hover {
+  box-shadow: 0 20px 50px rgb(0 0 0 / 10%);
+}
+
+.goods-info {
+  display: flex;
+  width: 100%;
+  margin: 10px 10px;
+  font-weight: 500;
+}
+
+.cart-counter {
+  font-size: 12px;
+}
