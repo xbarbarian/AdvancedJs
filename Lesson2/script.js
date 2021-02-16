@@ -44,6 +44,8 @@ let i = allGoods.map(allGoodsItem => {
 })
 console.log( i);
 
+class listgoods
+
 const renderGoods = (img, title, price) =>{
     return `<div class="goods" id = "goods"><div class="goods-img"> <img src="${img}"></div>` +
             `<div class="goods-info justify-content-between"><div class="goods-title">${title}</div>` +
@@ -58,6 +60,23 @@ const renderGoodsList = (list) => { //map преобразует и возвра
     let goodsList = list.map(item => renderGoods(item.img, item.title, item.price)).join("");
     console.log(goodsList);
     document.querySelector("#goods-list").insertAdjacentHTML("beforeend", goodsList);
+}
+
+
+
+
+const renderCart = () => {
+
+}
+const renderCartList = () => {
+
+}
+
+const addToCart = () => {
+
+}
+const removeFromCart = () => {
+
 }
 
 renderGoodsList(allGoods);
