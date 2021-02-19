@@ -2,81 +2,103 @@
 
 const allGoods = [
         {
+            id: 1,
             title: "Кресло",
             img: "./noimg.png",
-            qty: 1,
             price: 1500,
         },
         {
+            id: 2,
             title: "Стул",
             img: "./noimg.png",
-            qty: 1,
             price: 2000,
         },
         {
+            id: 3,
             title: "Стол",
             img: "./noimg.png",
-            qty: 1,
             price: 800,
         },
         {
+            id: 4,
             title: "Шкаф",
             img: "./noimg.png",
-            qty: 1,
             price: 11800,
         },
         {
+            id:5,
             title: "Комод",
             img: "./noimg.png",
-            qty: 1,
             price: 3800,
         },
         {
+            id: 6,
             title: "Полка",
             img: "./noimg.png",
-            qty: 1,
             price: 2800,
         },
 
     ];
-let i = allGoods.map(allGoodsItem => {
-    return allGoodsItem
-})
-console.log( i);
+// let i = allGoods.map(allGoodsItem => {
+//     return allGoodsItem
+// })
+// console.log( i);
 
-class listgoods
 
-const renderGoods = (img, title, price) =>{
+
+const renderGoods = (id, img, title, price) =>{
     return `<div class="goods" id = "goods"><div class="goods-img"> <img src="${img}"></div>` +
             `<div class="goods-info justify-content-between"><div class="goods-title">${title}</div>` +
             `<div class="goods-price"><span>${price}</span><span>₽</span></div>` +
-            `</div><a class="button">Добавить</a></div>`
+            `</div><a class="button" data-id="${id}">Добавить</a></div>`
 }
 
-// console.log(renderGoods(allGoods.img, allGoods.title,allGoods.price));
 
-const renderGoodsList = (list) => { //map преобразует и возвращает массив, при выводе он по умолчание
-    // делае join через запятую, что бы убрать запятые нужно добавить пустой join("")
-    let goodsList = list.map(item => renderGoods(item.img, item.title, item.price)).join("");
+
+const renderGoodsList = (list) => {
+    let goodsList = list.map(item => renderGoods(item.id, item.img, item.title, item.price)).join("");
     console.log(goodsList);
     document.querySelector("#goods-list").insertAdjacentHTML("beforeend", goodsList);
 }
 
 
 
+// class listGoods {
+//     constructor(id, img, title, price) {
+//         this.id = id;
+//         this.img = img;
+//         this.title = title;
+//         this.price = price;
+//     }
+//     renderGoods () {
+//         //pass
+//     }
+// }
 
-const renderCart = () => {
+class goodsBasket {
+    constructor() {
+        this.goodsInBasket = [];
+    }
 
+    renderBasketGoods () {
+
+    }
+
+    renderBasketList () {
+
+    }
+
+    addToBasket () {
+
+    }
+    deleteFromBasket () {
+
+    }
+    getTotalPrice () {
+        return this.goodsInBasket.reduce((total, amount) => (total)+ (amount.price * amount.qty), 0);
+    }
 }
-const renderCartList = () => {
 
-}
 
-const addToCart = () => {
-
-}
-const removeFromCart = () => {
-
-}
 
 renderGoodsList(allGoods);
