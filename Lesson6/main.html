@@ -13,8 +13,7 @@
 <header>
     <div class="container">
         <menu>
-            <div class="search-line"><input type="search" placeholder="Enter text to search">
-            <input type="submit" value="Search"></div>
+            <input type="text" placeholder="Enter text to search" v-model="search">
             <li class="button">Корзина <span class="cart-counter" id="cart-counter">0</span></li>
         </menu>
     </div>
@@ -22,8 +21,15 @@
 <div class="main" id="main">
     <div class="container">
         <h1>Каталог товаров</h1>
-        <div class="goods-list justify-content-between" id="goods-list">
+        <div class="goods-list justify-content-between" id="goods-list" >
+            <div class="goods" id = "goods" v-for="item in allGoods">
+                <div class="goods-img"> <img :src="item.img"></div>
+                <div class="goods-info justify-content-between"><div class="goods-title">{{item.title}}</div>
+                <div class="goods-price"><span>{{item.price}}</span><span>₽</span></div>
+                </div><a class="button" data-id="{{item.id}}">Добавить</a></div>
+            </div>
         </div>
+
         <hr>
         <div class="basket">
             <div class="order-list" id="order-list">
