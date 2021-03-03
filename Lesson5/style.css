@@ -29,8 +29,9 @@ menu  {
   margin: 5px 5px 0 0;
 
 }
-.search-line input{
-padding: 10px;
+menu input{
+  padding: 10px;
+  text-align: center;
 }
 
 .container h1 {
