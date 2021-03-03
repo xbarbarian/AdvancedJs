@@ -99,5 +99,4 @@ class goodsBasket {
     }
 }
 
-
 renderGoodsList(allGoods);
