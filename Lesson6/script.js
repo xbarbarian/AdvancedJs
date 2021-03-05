@@ -4,6 +4,8 @@
 const app = new Vue({
     el: "#goods-list",
     data: {
+        search: '',
+        filteredGoods: [],
         allGoods: [
             {
                 id: 1,
@@ -44,11 +46,9 @@ const app = new Vue({
 
     ]
     },
-    // computed: {
-    //     assetsPath: function(){
-    //         return './'+ this.allGoods.img;
-    //     }
-    // }
+    computed: {
+
+    }
     }
 
 )
